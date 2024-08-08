@@ -11,10 +11,11 @@ library(here) #for data loading/saving
 
 #path to data
 #note the use of the here() package and not absolute paths
-data_location <- here::here("data","processed-data","processeddata.rds")
+data_location <- here::here("data","raw-data","NFL_data.xlsx")
 
-#load data. 
-mydata <- readRDS(data_location)
+#load data
+nfl <- read_excel(data_location)
+
 
 
 ######################################
@@ -25,7 +26,7 @@ mydata <- readRDS(data_location)
 #### First model fit
 # fit linear model using height as outcome, weight as predictor
 
-lmfit1 <- lm(Height ~ Weight, mydata)  
+lmfit1 <- lm(Wins ~ ACTIVE53MAN, nfl)  
 
 # place results from fit into a data frame with the tidy function
 lmtable1 <- broom::tidy(lmfit1)
@@ -41,7 +42,7 @@ saveRDS(lmtable1, file = table_file1)
 #### Second model fit
 # fit linear model using height as outcome, weight and gender as predictor
 
-lmfit2 <- lm(Height ~ Weight + Gender, mydata)  
+lmfit2 <- lm(Wins ~ ACTIVE53MAN + Points_For, nfl)  
 
 # place results from fit into a data frame with the tidy function
 lmtable2 <- broom::tidy(lmfit2)
