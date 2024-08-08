@@ -1,7 +1,7 @@
 ---
-title: "Example Manuscript Template for a Data Analysis Project"
+title: "An Analysis of team succeess in the NFL with salary as a predictor"
 subtitle: ""
-author: Andreas Handel
+author: Nicholas Stevenson
 date: "`r Sys.Date()`"
 format:
   docx:
@@ -11,11 +11,6 @@ format:
 bibliography: ../../assets/dataanalysis-references.bib
 csl: ../../assets/apa.csl
 ---
-
-The structure below is one possible setup for a data analysis project (including the course project). For a manuscript, adjust as needed. 
-You don't need to have exactly these sections, but the content covering those sections should be addressed.
-
-This uses MS Word as output format. [See here](https://quarto.org/docs/output-formats/ms-word.html) for more information. You can switch to other formats, like html or pdf. See [the Quarto documentation](https://quarto.org/) for other formats.
 
 
 ```{r, echo=FALSE, message=FALSE}
@@ -27,7 +22,7 @@ library(knitr)
 
 
 # Summary/Abstract
-_Write a summary of your project._
+This study is will be used to determine what the correlation is between winning and losing teams in the NFL and the amount of salary each team is spending.
 
 
 {{< pagebreak >}}
@@ -36,18 +31,15 @@ _Write a summary of your project._
 # Introduction 
 
 ## General Background Information
-_Provide enough background on your topic that others can understand the why and how of your analysis_ 
+I think it’s safe to say that many of us may be familiar with the movie Moneyball. The movie, based on the book of the same title, follows a team with one of the lowest payrolls in Major League Baseball as they catapult to the playoffs to compete for the championship against teams with unending resources. The team, the Oakland Athletics, was able to do this by using a more advanced statistical approach to evaluating players for their team. This allowed them to find hidden value in the player market that other teams were not aware of. This has always been fascinating and it led me to wonder how this might work in other leagues. I decided to take a closer look at the National Football League.
+
+While I will not be studying advanced football statistics to measure a player’s “hidden” value, I will be looking at where they rank in terms of salary and how much of an impact they have in their team’s winning percentage.
 
 ## Description of data and data source
-_Describe what the data is, what it contains, where it is from, etc. Eventually this might be part of a methods section._
+The data is contains a recap of the 2023 NFL season which includes such variables as wins, losses, points scored, total offense, total defense as well as the amount of money the teams are spending in salary. The data will be from Sportrac.com, overthecap.com, profootballreference.com, and espn.com.
 
 ## Questions/Hypotheses to be addressed
-_State the research questions you plan to answer with this analysis._
-
-To cite other work (important everywhere, but likely happens first in introduction), make sure your references are in the bibtex file specified in the YAML header above and have the right bibtex key. Then you can include like this:
-
-Examples of reproducible research projects can for instance be found in [@mckay2020; @mckay2020a].
-
+The most obvious question is, do teams that spend the most on salary tend to have higher winning percentages? But the question that I will focus on is, where is the value? When you look at a winning team, there is generally a player, or a group of players, that are playing beyond their salary, i.e., these players are playing above expectations and are therefore considered a good or great value for their respective teams. Is there a common value among certain positions? Or is the value to be found in those players strictly on rookie contracts?
 
 
 {{< pagebreak >}}
@@ -55,13 +47,13 @@ Examples of reproducible research projects can for instance be found in [@mckay2
 
 # Methods 
 
+## Data Cleaning
 _Describe your methods. That should describe the data, the cleaning processes, and the analysis approaches. You might want to provide a shorter description here and all the details in the supplement._
 
+## Exploratory Data Analysis
 
-## Schematic of workflow
+## Statistical Analysis
 
-Sometimes you might want to show a schematic diagram/figure that was not created with code (if you can do it with code, do it). @fig-schematic is an example of some - completely random/unrelated - schematic that was generated with Biorender.
-We store those figures in the `assets` folder.
 
 ```{r}
 #| label: fig-schematic
